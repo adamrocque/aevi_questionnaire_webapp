@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+      
+      // Get the button element and the input element for postal code
+      document.getElementById("result-btn").addEventListener("click", collectData);
+
+    });
+
+    function collectData(){
+      var formResponses = document.getElementById("responseForm").value;
+      google.script.run.processForm(formResponses);
+    }
+
+  </script>
+</html>
