@@ -16,5 +16,5 @@ function render(file, templateArgsObject){
       webTemplate[key] = templateArgsObject[key];
     });
   } //End If
-  return webTemplate.evaluate();
+  return webTemplate.evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
 }
