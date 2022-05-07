@@ -17,8 +17,31 @@
     });
 
     function collectData(){
-      var formResponses = document.getElementById("responseForm").value;
-      google.script.run.processForm(formResponses);
+      console.log("About to pull all inputs")
+
+      var formResponses = document.querySelectorAll("input");
+      var parsedResponses = {}
+
+      var businessName = ""
+      var email = ""
+
+      if (formResponses){
+        for (var i = 0; i < formResponses.length; i++){
+          if (formResponses[i].type == "radio" & formResponses[i].checked == true){
+            parsedResponses[formResponses[i].name] = formResponses[i].value
+          }
+          if (formResponses[i].name == "business"){
+            businessName = formResponses[i].value
+
+          }
+          if (formResponses[i].name == "email"){
+            email = formResponses[i].value
+          }
+        }
+      }
+      console.log("Sending the following data:")
+      console.log(parsedResponses)
+      google.script.run.processForm(parsedResponses, businessName, email);
     }
 
   </script>
