@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
  
     <?!= include("form-css"); ?>
+    <?!= include("result-js"); ?>
   </head>
   <body>
 
@@ -24,12 +25,31 @@
           <a href="<?= ScriptApp.getService().getUrl(); ?>?v=form" id="re-form-btn" class="waves-effect waves-light btn-small green darken-2"><i class="material-icons left">chevron_right</i>One more form?</a>
         </div> 
       </div> <!-- ROW CLOSE -->
-    
-
-
+      <div class ="row">
+        <div class="input-field col s12">
+          <h3>Here are suggestions for high impact changes from the Aevi Team:</h3>
+        </div> 
+      </div> <!-- ROW CLOSE -->    
+          
+      <div class ="row">
+        <div class="input-field col s12" id="q1">
+          <h4 >Loading ...</h4>
+        </div> 
+      </div> <!-- ROW CLOSE -->  
+      <div class ="row">
+        <div class="input-field col s12" id="q2">
+          <h4 >Loading ...</h4>
+        </div> 
+      </div> <!-- ROW CLOSE -->              
+      <div class ="row">
+        <div class="input-field col s12" id="q3">
+          <h4>Loading ...</h4>
+        </div> 
+      </div> <!-- ROW CLOSE -->                       
     </div> <!-- CONTAINER CLOSE -->
   </body>
 
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+  
 </html>

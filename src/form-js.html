@@ -15,9 +15,9 @@
       document.getElementById("result-btn").addEventListener("click", collectData);
 
     });
-
+    
     function collectData(){
-      console.log("About to pull all inputs")
+      // console.log("About to pull all inputs")
 
       var formResponses = document.querySelectorAll("input");
       var parsedResponses = {}
@@ -39,9 +39,8 @@
           }
         }
       }
-      console.log("Sending the following data:")
-      console.log(parsedResponses)
       google.script.run.processForm(parsedResponses, businessName, email);
+      
     }
 
   </script>

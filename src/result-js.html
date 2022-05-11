@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    
+  </body>
+<script>
+    window.addEventListener('load', function() {
+      google.script.run.withSuccessHandler(printResults).getResults();
+      
+    });
+    function printResults(results){
+      console.log("The Results from the form:")
+      console.log(results)
+      
+      var response1 = "<h4>You answered no to: "+ results[0] +"</h4><p>" + results[1] + "</p>"
+      var response2 = "<h4>You answered no to: "+ results[2] +"</h4><p>" + results[3] + "</p>"
+      var response3 = "<h4>You answered no to: "+ results[4] +"</h4><p>" + results[5] + "</p>"
+
+      displayAnswers(response1, response2, response3)
+        
+    }
+
+    function displayAnswers(ques1, ques2, ques3){
+      var q1 = document.getElementById("q1")
+      var q2 = document.getElementById("q2")
+      var q3 = document.getElementById("q3")
+
+      q1.innerHTML = ques1
+      q2.innerHTML = ques2
+      q3.innerHTML = ques3
+    }
+  </script>
+</html>
