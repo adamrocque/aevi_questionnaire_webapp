@@ -8,6 +8,7 @@
   </body>
 <script>
     window.addEventListener('load', function() {
+      console.log("Getting results from the form")
       google.script.run.withSuccessHandler(printResults).getResults();
       
     });

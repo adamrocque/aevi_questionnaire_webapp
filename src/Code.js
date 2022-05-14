@@ -69,5 +69,7 @@ function render(file, templateArgsObject){
       webTemplate[key] = templateArgsObject[key];
     });
   } //End If
-  return webTemplate.evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+  return webTemplate.evaluate()
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+    .setSandboxMode(HtmlService.SandboxMode.IFRAME);
 }
